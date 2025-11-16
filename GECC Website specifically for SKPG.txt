@@ -1,0 +1,66 @@
+GECC Website specifically for SKPG
+
+Notion link: https://www.notion.so/invite/ae3a9fbb476e19e78540dfed2e60598f67ba73e7
+
+--- UI/UX Design ---
+
+1. Figma
+
+--- Frontend ---
+
+1. Next.js
+2. Tailwind CSS
+3. Node.js
+4. React.js
+
+--- Backend ---
+
+1. Python
+
+--- Database ---
+
+1.PostgreSQL
+
+university-system/
+│── frontend/               # Next.js app (UI + auth + data tables) → JavaScript/TypeScript
+│   ├── public/             # static assets (logo, images) → (no code, just assets)
+│   ├── src/
+│   │   ├── pages/          # Next.js routes (login.tsx, dashboard.tsx, api/) → TypeScript/React
+│   │   ├── components/     # Reusable React components (Navbar, Table, Charts) → TypeScript/React
+│   │   ├── hooks/          # Custom React hooks (useAuth, useMeasurements) → TypeScript/React
+│   │   ├── lib/            # API clients, utils (axios, fetch wrapper) → TypeScript/JavaScript
+│   │   ├── styles/         # Tailwind + global styles → CSS
+│   │   └── config/         # Frontend config (API URL, constants) → TypeScript
+│   └── package.json        # Node.js dependencies → JSON
+│
+│── backend/                # FastAPI app (REST API + auth + business logic) → Python
+│   ├── app/
+│   │   ├── main.py         # FastAPI entrypoint → Python
+│   │   ├── auth.py         # JWT auth, role-based middleware → Python
+│   │   ├── routes/         # API endpoints (users.py, courses.py, measurements.py) → Python
+│   │   ├── models/         # SQLAlchemy models → Python (ORM)
+│   │   ├── schemas/        # Pydantic schemas → Python
+│   │   ├── services/       # Business logic (db queries, cache) → Python
+│   │   ├── core/           # Settings, logging, security utils → Python
+│   │   └── tests/          # Unit tests → Python (pytest/unittest)
+│   └── requirements.txt    # Python dependencies list → TXT
+│
+│── database/               # SQL migrations, schema, seeds
+│   ├── migrations/         # Alembic migrations → Python + SQL
+│   ├── init.sql            # Initial schema & roles → SQL
+│   └── seeds.sql           # Sample data (students, lecturers, admin) → SQL
+│
+│── infra/                  # Infrastructure (deployment configs)
+│   ├── docker-compose.yml  # Docker services config → YAML
+│   ├── Dockerfile.backend  # Backend container build → Dockerfile (Bash-like)
+│   ├── Dockerfile.frontend # Frontend container build → Dockerfile (Bash-like)
+│   ├── k8s/                # Kubernetes manifests (optional, for scaling) → YAML
+│   └── nginx.conf          # Reverse proxy setup → Nginx config
+│
+│── docs/                   # Documentation
+│   ├── architecture.md     # System architecture diagram + explanation → Markdown
+│   ├── api-spec.md         # REST API documentation → Markdown
+│   └── frontend-guide.md   # UI/UX flow (wireframes) → Markdown
+│
+└── README.md               # Main project readme → Markdown
+
